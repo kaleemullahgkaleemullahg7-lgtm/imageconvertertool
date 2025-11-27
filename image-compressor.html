@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free online image compression tool. Optimize your images for the web with adjustable compression levels. Fast, secure, and fully responsive.">
+    <meta name="keywords"
+        content="image compressor, reduce image size, optimize image, online image tool, jpeg compressor, png optimizer">
+    <meta name="author" content="TutsTools">
+    <title>Image Compressor - TutsTools</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Placeholder -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_AD_CLIENT_ID"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">TutsTools</a>
+            <a href="index.html" style="color: var(--text-main); text-decoration: none; font-weight: 500;">← Back to
+                Home</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- Top Ad Space -->
+        <div class="ad-space ad-top">
+            <span class="ad-label">Advertisement</span>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_AD_CLIENT_ID"
+                data-ad-slot="YOUR_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <section class="tool-section glass-panel">
+            <h1 class="hero-title">Optimize Your Images</h1>
+            <p class="hero-subtitle">Reduce file size without losing quality. Fast, free, and secure.</p>
+
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="fileInput" accept="image/png, image/jpeg, image/webp" hidden>
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M9 11L12 8 15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M8 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
+                            stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <p>Drag & Drop your image here or <span class="highlight">Browse</span></p>
+                    <p class="file-types">Supports PNG, JPG, WEBP</p>
+                </div>
+            </div>
+
+            <div class="editor-area hidden" id="editorArea">
+                <div class="preview-container">
+                    <div class="image-wrapper">
+                        <span class="badge">Original</span>
+                        <img id="originalPreview" alt="Original Image">
+                        <div class="file-info" id="originalInfo">0 KB</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <span class="badge">Compressed</span>
+                        <img id="compressedPreview" alt="Compressed Image">
+                        <div class="file-info" id="compressedInfo">0 KB</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="settings-grid">
+                        <div class="control-group">
+                            <label for="formatSelect">Output Format</label>
+                            <select id="formatSelect">
+                                <option value="original">Keep Original</option>
+                                <option value="image/jpeg">JPEG</option>
+                                <option value="image/png">PNG</option>
+                                <option value="image/webp">WEBP</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="maxWidth">Max Width (px)</label>
+                            <input type="number" id="maxWidth" placeholder="Auto">
+                        </div>
+                        <div class="control-group">
+                            <label for="maxHeight">Max Height (px)</label>
+                            <input type="number" id="maxHeight" placeholder="Auto">
+                        </div>
+                    </div>
+
+                    <div class="slider-container">
+                        <label for="qualitySlider">Compression Level: <span id="qualityValue">80%</span></label>
+                        <input type="range" id="qualitySlider" min="1" max="100" value="80">
+                        <div class="slider-labels">
+                            <span>Low Quality</span>
+                            <span>High Quality</span>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="downloadBtn" class="btn-primary">
+                            Download Compressed Image
+                        </button>
+                        <button id="resetBtn" class="btn-secondary">
+                            Upload New Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Ad Space -->
+        <div class="ad-space ad-bottom">
+            <span class="ad-label">Advertisement</span>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_AD_CLIENT_ID"
+                data-ad-slot="YOUR_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2024 TutsTools. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

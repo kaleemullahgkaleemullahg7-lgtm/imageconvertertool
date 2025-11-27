@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online PDF compressor. Reduce PDF file size while maintaining quality.">
+    <title>PDF Compressor - TutsTools</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PDF-lib Library -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">TutsTools</a>
+            <a href="index.html" style="color: var(--text-main); text-decoration: none; font-weight: 500;">← Back to
+                Home</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="tool-section glass-panel">
+            <h1 class="hero-title">PDF Compressor</h1>
+            <p class="hero-subtitle">Reduce PDF file size while maintaining quality.</p>
+
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="fileInput" accept="application/pdf" hidden>
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 12H15M9 16H15M17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H12.586C12.8512 3.00006 13.1055 3.10545 13.293 3.293L18.707 8.707C18.8946 8.89449 18.9999 9.1488 19 9.414V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>Drag & Drop your PDF file here or <span class="highlight">Browse</span></p>
+                    <p class="file-types">Supports PDF files</p>
+                </div>
+            </div>
+
+            <div class="editor-area hidden" id="editorArea">
+                <div class="pdf-info-container">
+                    <div class="pdf-info-card glass-panel">
+                        <h3>Original PDF</h3>
+                        <div class="info-item">
+                            <span class="info-label">File Name:</span>
+                            <span id="originalName">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">File Size:</span>
+                            <span id="originalSize">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Pages:</span>
+                            <span id="pageCount">-</span>
+                        </div>
+                    </div>
+                    <div class="pdf-info-card glass-panel">
+                        <h3>Compressed PDF</h3>
+                        <div class="info-item">
+                            <span class="info-label">New Size:</span>
+                            <span id="compressedSize">Processing...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Reduction:</span>
+                            <span id="reduction">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="action-buttons">
+                        <button id="downloadBtn" class="btn-primary" disabled>
+                            Download Compressed PDF
+                        </button>
+                        <button id="resetBtn" class="btn-secondary">
+                            Upload New File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2024 TutsTools. All rights reserved.</p>
+    </footer>
+
+    <script src="pdf-compressor.js"></script>
+</body>
+
+</html>

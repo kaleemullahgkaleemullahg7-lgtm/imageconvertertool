@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free online image resizer. Resize images by dimensions or percentage with aspect ratio control.">
+    <title>Image Resizer - TutsTools</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">TutsTools</a>
+            <a href="index.html" style="color: var(--text-main); text-decoration: none; font-weight: 500;">← Back to
+                Home</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="tool-section glass-panel">
+            <h1 class="hero-title">Image Resizer</h1>
+            <p class="hero-subtitle">Resize your images to custom dimensions or percentages.</p>
+
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="fileInput" accept="image/png, image/jpeg, image/jpg, image/webp" hidden>
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 7V4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H18C18.5304 2 19.0391 2.21071 19.4142 2.58579C19.7893 2.96086 20 3.46957 20 4V7M4 7H20M4 7V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7M10 11V17M14 11V17"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>Drag & Drop your image here or <span class="highlight">Browse</span></p>
+                    <p class="file-types">Supports PNG, JPG, WEBP</p>
+                </div>
+            </div>
+
+            <div class="editor-area hidden" id="editorArea">
+                <div class="preview-container">
+                    <div class="image-wrapper">
+                        <span class="badge">Original</span>
+                        <img id="originalPreview" alt="Original Image">
+                        <div class="file-info" id="originalInfo">0 KB</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <span class="badge">Resized</span>
+                        <img id="resizedPreview" alt="Resized Image">
+                        <div class="file-info" id="resizedInfo">0 KB</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="settings-grid">
+                        <div class="control-group">
+                            <label for="widthInput">Width (px)</label>
+                            <input type="number" id="widthInput" placeholder="Auto" min="1">
+                        </div>
+                        <div class="control-group">
+                            <label for="heightInput">Height (px)</label>
+                            <input type="number" id="heightInput" placeholder="Auto" min="1">
+                        </div>
+                        <div class="control-group">
+                            <label for="aspectRatio">
+                                <input type="checkbox" id="aspectRatio" checked style="width: auto; margin-right: 8px;">
+                                Lock Aspect Ratio
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="downloadBtn" class="btn-primary">
+                            Download Resized Image
+                        </button>
+                        <button id="resetBtn" class="btn-secondary">
+                            Upload New Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2024 TutsTools. All rights reserved.</p>
+    </footer>
+
+    <script src="image-resizer.js"></script>
+</body>
+
+</html>
